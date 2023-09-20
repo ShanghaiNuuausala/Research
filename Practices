@@ -134,3 +134,19 @@ my score is 201
 Casting to a string...
 The type of my score is now <class 'str'> 
 my score is 201 
+
+# STRING INPUT
+# getting string input from user
+print("Welcome to your first data entry program\n")
+user_name = input("Please enter your name...\n")
+user_yob = int(input("Please enter your year of birth...\n"))
+print("Thank you for your input\n")
+print("The name you entered is ", user_name)
+print("Your age in years is ", 2016 - user_yob)
+# prints Please enter your name...
+Shanghai
+Please enter your year of birth...
+1989
+Thank you for your input
+The name you entered is Shanghai
+Your age in years is 27
