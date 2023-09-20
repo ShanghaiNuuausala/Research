@@ -12,7 +12,7 @@ obj = MyClass(30)
 
 print(obj)  # Output: MyClass object with value: 30
 
--------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 #2 – Student.py
 class Student:
     def __init__(self, name, age,gender):
@@ -39,5 +39,313 @@ print(student2.name) # Output: Sam
 
 # parameter1, parameter2, ...: These are the parameters that you can pass when creating an instance of the class. 
 # They allow you to provide initial values for the object's attributes.
--------------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#3 – Ticket.py
+class Ticket:
+    def __init__(self, ticket_number, event_name, event_date, ticket_price):
+        self.ticket_number = ticket_number
+        self.event_name = event_name
+        self.event_date = event_date
+        self.ticket_price = ticket_price
+
+# The f" string is a way to format string which can include values inside of expressions{} 
+    def display_ticket_info(self):
+        print(f"Ticket Number: {self.ticket_number}")
+        print(f"Event Name: {self.event_name}")
+        print(f"Event Date: {self.event_date}")
+# The :.2f}" inside the f-string is a format specifier that indicates you want to format the floating-point number with two decimal places.
+        print(f"Ticket Price: ${self.ticket_price:.2f}")
+     
+# Create ticket objects
+ticket1 = Ticket(1234, "Concert", "24-10-2023", 100.00)
+ticket2 = Ticket(2345, "Game", "30-09-2023", 40.50)
+ticket3 = Ticket(3456, "Movie", "01-12-2023", 20.99)
+
+# Display ticket information
+print("Ticket 1 Information:")
+ticket1.display_ticket_info()
+# Output: Ticket 1 Information: Ticket Number: 1234 Event Name: Concert Event Date: 24-10-2023 Ticket Price: $100.00
+
+# The ("\n inside the string is an escape character for printing a new line
+print("\nTicket 2 Information:")
+ticket2.display_ticket_info()
+# Output: Ticket 2 Information: Ticket Number: 2345 Event Name: Game Event Date: 30-09-2023 Ticket Price: $40.50
+
+print("\nTicket 3 Information:")
+ticket3.display_ticket_info()
+# Output: Ticket 3 Information: Ticket Number: 3456 Event Name: Movie Event Date: 01-12-2023 Ticket Price: $20.99
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#4 Vehicle.py
+# Define a Vehicle class
+class Vehicle:
+    # Class constructor (initialize attributes)
+    def __init__(self, vehicle_type, make, year):
+        self.vehicle_type = vehicle_type
+        self.make = make
+        self.year = year
+        self.is_running = False
+
+# Method to start the vehicle
+    def start(self):
+        if not self.is_running:
+            print(f"{self.year} {self.make} {self.vehicle_type} is starting.")
+            self.is_running = True
+        else:
+            print(f"{self.year} {self.make} {self.vehicle_type} is already running.")
+
+# Method to stop the car
+    def stop(self):
+        if self.is_running:
+            print(f"{self.year} {self.make} {self.vehicle_type} is stopping.")
+            self.is_running = False
+        else:
+            print(f"{self.year} {self.make} {self.vehicle_type} is already stopped.")
+
+# Create two vehicle objects
+vehicle1 = Vehicle("Truck", "Isuzu", 2019)
+vehicle2 = Vehicle("Car", "Subaru", 2022)
+
+# Start and stop the cars
+vehicle1.start() # Output: 2019 Isuzu Truck is starting.
+vehicle1.stop() # Output: 2019 Isuzu Truck is stopping.
+vehicle2.start() # 2022 Subaru Car is starting.
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#5 – Bank.py
+class BankAccount:
+    def __init__(self, account_holder, balance=0):
+        self.account_holder = account_holder
+        self.balance = balance
+
+# Method to deposit funds
+    def deposit(self, amount):
+        if amount > 0:
+            self.balance += amount
+            # self.balance =  self.balance + amount
+            return f"Deposited ${amount}. New balance is ${self.balance}"
+        else:
+            return "Invalid deposit amount"
+
+# Method to withdraw funds
+    def withdraw(self, amount):
+        if 0 < amount <= self.balance:
+            self.balance -= amount
+             # self.balance =  self.balance - amount
+            return f"Withdrew ${amount}. New balance is ${self.balance}"
+        else:
+            return "Invalid withdrawal amount"
+
+    def get_balance(self):
+        return f"Current balance for {self.account_holder}: ${self.balance}"
+
+    def __str__(self):
+        return f"Account Holder: {self.account_holder}\nBalance: ${self.balance}"
+
+
+# Example usage:
+if __name__ == "__main__":
+
+# Create a bank account
+    account1 = BankAccount("John", 2000)
+    account2 = BankAccount("April", 12.85)
+
+# Print account information for John
+print(account1)
+# Get balance
+print(account1.get_balance())  
+# Deposit money
+print(account1.deposit(650))
+# Withdraw money
+print(account1.withdraw(150))
+# Output: Account Holder: John Balance: $2000 Current balance for John: $2000 Deposited $650. New balance is $2650 Withdrew $150. New balance is $2500
+
+# Print account information for April
+print(account2)
+# Withdraw money
+print(account2.withdraw(20.00))
+# Get balance
+print(account2.get_balance()) 
+# Output: Account Holder: April Balance: $12.85 Invalid withdrawal amount Current balance for April: $12.85
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#6 – HelpDesk.py
+# This file still requires: 
+# The correct method of closing a ticket once it has been resolved
+# Assign a ticket number starting from 2000 
+
+# Ticket class
+class Ticket:
+    def __init__(self, ticketNumber, staffID, name, email, description):
+        self.ticketNumber = ticketNumber
+        self.staffID = staffID
+        self.name = name
+        self.email = email
+        self.description = description
+        self.response = "Not Yet Provided"
+        self.status = "Open"
+
+    def __str__(self):
+        return f"Ticket Number: {self.ticketNumber}\nName: {self.name}\nStaff ID: {self.staffID}\nEmail: {self.email}\nDescription: {self.description}\nResponse: {self.response}\nStatus: {self.status}"
+
+# HelpDesk Class
+class HelpDesk:
+    ticketNumber = 2000
+    openTickets = 0
+    closedTickets = 0
+    # Creating an empty list called "tickets" then use the .append() method to add elements to the empty list
+    tickets = [] 
+
+# Method to submit a ticket
+    def submitTicket(self, staffID, name, email, description):
+        newTicket = Ticket(HelpDesk.ticketNumber, staffID, name, email, description)
+        # Refer to first second comment in HelpDesk Class regarding .append method
+        self.tickets.append(newTicket)
+        HelpDesk.ticketNumber += 1
+        # HelpDesk.ticketNumber  = HelpDesk.ticketNumber + 1
+        HelpDesk.openTickets += 1
+        if "Password Change" in description:
+            # Slicing strings of variables to implement the new password rule 
+            newTicket.response = f"New Password: {staffID[:2]}{name[:3]}"
+            HelpDesk.closedTickets += 1
+            HelpDesk.openTickets -= 1
+            newTicket.status = "Closed"
+        return newTicket
+
+# Method to respond to a ticket
+    def respondToTicket(self, ticketNumber, response):
+        for ticket in HelpDesk.tickets:
+            if ticket.ticketNumber == ticketNumber:
+                ticket.response = response
+                if ticket.status == "Open" and "Password Change" in ticket.description:
+                    HelpDesk.closedTickets += 1
+                    HelpDesk.openTickets -= 1
+                    ticket.status = "Closed"
+                elif ticket.status == "Closed":
+                    HelpDesk.openTickets += 1
+                    HelpDesk.closedTickets -= 1
+                    ticket.status = "Reopened"
+
+# Method to display tickets
+    def displayTicket(self, ticketNumber):
+        for ticket in HelpDesk.tickets:
+            if ticket.ticketNumber == ticketNumber:
+                print(ticket)
+
+# Method to display and track statistics
+    def displayStatistics(self):
+        print(
+            f"Number of tickets submitted: {HelpDesk.ticketNumber - 2000}\nNumber of open tickets: {HelpDesk.openTickets}\nNumber of closed tickets: {HelpDesk.closedTickets}")
+
+# The main entry point of the program.
+# This function initializes the HelpDesk system and starts execution.
+def main():
+    helpDesk = HelpDesk()
+
+    # Submitting tickets
+    ticket1 = helpDesk.submitTicket("123456", "Tupac Shakur", "tupac@myhelpdesk.com", "Password Change")
+    ticket2 = helpDesk.submitTicket("654321", "Nicki Monroe", "nicki@myhelpdesk.com", "Network Connection Issue")
+    ticket3 = helpDesk.submitTicket("789012", "Kanye South", "kanye@myhelpdesk.com", "Application Error")
+    print()
+
+    # Displaying ticket statistics
+    helpDesk.displayStatistics()
+    print()
+
+    # Resolving tickets
+    helpDesk.respondToTicket(ticket1.ticketNumber, "Your password has been changed.")
+    helpDesk.respondToTicket(ticket2.ticketNumber, "Your network connection issue has been resolved.")
+    print()
+
+    # Reopening a resolved ticket
+    helpDesk.respondToTicket(ticket1.ticketNumber, "Still needing help.")
+    print()
+
+    # Displaying tickets
+    helpDesk.displayTicket(ticket1.ticketNumber)
+    helpDesk.displayTicket(ticket2.ticketNumber)
+    helpDesk.displayTicket(ticket3.ticketNumber)
+    print()
+    # Displaying ticket statistics again
+    helpDesk.displayStatistics()
+
+main()
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#7 – UserInputTicketSystem
+
+# Class.py
+class Ticket:
+    counter = 1 # Counter increased by for the assigning automatic ticket numbers
+
+    def __init__(self, staff_id, creator_name, contact_email, description):
+        self.ticket_number = Ticket.counter + 2000 # Ticket number assigned
+starting at       2000 + Counter
+        self.staff_id = staff_id
+        self.creator_name = creator_name
+        self.contact_email = contact_email
+        self.description = description
+        self.response = "Not Yet Provided"
+        self.status = "Open"
+
+# HelpDesk.py
+class HelpDesk:
+    def __init__(self):
+        self.tickets = [] 
+
+# Method to submit a ticket
+    def submit_ticket(self):
+        print("Submit a New Ticket:")
+        staff_id = input("Staff ID: ")
+        creator_name = input("Creator Name: ")
+        contact_email = input("Contact Email: ")
+        description = input("Description of the Issue: ")
+
+        ticket = Ticket(staff_id, creator_name, contact_email, description)
+        self.tickets.append(ticket)
+
+        print("Ticket Submitted Successfully!")
+        print(f"Ticket Number: {ticket.ticket_number}\n")
+
+# Method to display tickets
+    def display_tickets(self):
+        print("Displaying all Tickets:")
+        for ticket in self.tickets:
+            print(f"Ticket Number: {ticket.ticket_number}")
+            print(f"Staff ID: {ticket.staff_id}")
+            print(f"Creator Name: {ticket.creator_name}")
+            print(f"Contact Email: {ticket.contact_email}")
+            print(f"Description: {ticket.description}\n")
+            print(f"Status: {ticket.status}\n")
+            print(f"Response: {ticket.response}\n")
+        
+# Main.py
+def main():
+    help_desk = HelpDesk()
+
+# User input
+    while True:
+        print("Help Desk Ticketing System")
+        print("1. Submit Ticket")
+        print("2. Display Tickets")
+        print("3. Exit")
+     
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            help_desk.submit_ticket()
+        elif choice == "2":
+            help_desk.display_tickets()
+        elif choice == "3":
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid choice. Please select again.")
+
+
+# This block of code is executed only “if” the script is run as the main program.
+# It calls the main() function to start the program’s execution
+if __name__ == "__main__":
+    main()
 
