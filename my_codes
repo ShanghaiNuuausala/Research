@@ -1,1 +1,37 @@
+class Ticket:
+    def __init__(self, ticketNumber, staffID, name, email, description):
+        self.ticketNumber = ticketNumber
+        self.staffID = staffID
+        self.name = name
+        self.email = email
+        self.description = description
+        self.response = "Not Yet Provided"
+        self.status = "Open"
 
+class Ticket:
+    ticket_counter = 0 
+
+    def __init__(self, staff_id, creator_name, contact_email, description):
+        self.ticket_number = Ticket.ticket_counter + 2000
+        self.staff_id = staff_id
+        self.creator_name = creator_name
+        self.contact_email = contact_email
+        self.description = description
+        self.status = "Open"
+        self.response = "Not Yet Provided"
+        Ticket.ticket_counter += 1
+
+class Ticket:
+    ticket_counter = 0 
+    all_tickets = []
+
+    def __init__(self, staff_id, creator_name, contact_email, description):
+        self.ticket_number = Ticket.ticket_counter + 2000
+        self.staff_id = staff_id
+        self.creator_name = creator_name
+        self.contact_email = contact_email
+        self.description = description
+        self.status = "Open"
+        self.response = "Not Yet Provided"
+        Ticket.ticket_counter += 1
+        Ticket.all_tickets.append(self)
