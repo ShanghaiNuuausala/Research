@@ -196,3 +196,62 @@ ticket2 = helpDesk.submitTicket("654321", "Jane Doe", "janedoe@gmail.com", "Netw
 ticket3 = helpDesk.submitTicket("789012", "Bob Johnson", "bjohnson@yahoo.com", "Application Error")
 print()
 
+# user input
+if __name__ == "__main__":
+    while True:
+        print("\nHelp Desk Ticketing System")
+        print("1. Submit Ticket")
+        print("2. Respond to Ticket")
+        print("3. Reopen Ticket")
+        print("4. Display Ticket Information")
+        print("5. Display Ticket Statistics")
+        print("6. Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            submit_ticket()
+        elif choice == "2":
+            respond_to_ticket()
+        elif choice == "3":
+            reopen_ticket()
+        elif choice == "4":
+            ticket_number = int(input("Enter Ticket Number to display: "))
+            for ticket in Ticket.all_tickets:
+                if ticket.ticket_number == ticket_number:
+                    ticket.display_info()
+                    break
+            else:
+                print("Ticket not found.")
+        elif choice == "5":
+            display_statistics()
+        elif choice == "6":
+            print("Exiting the Ticketing System. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please select a valid option.")
+#
+if choice == "1":
+            staff_id = input("Enter Staff ID: ")
+            creator_name = input("Enter Ticket Creator Name: ")
+            contact_email = input("Enter Email Address: ")
+            description = input("Enter Description of the Issue: ")
+            system.submit_ticket(staff_id, creator_name, contact_email, description)
+        elif choice == "2":
+            ticket_number = int(input("Enter Ticket Number: "))
+            response = input("Enter Feedback Response: ")
+            system.respond_to_ticket(ticket_number, response)
+        elif choice == "3":
+            ticket_number = int(input("Enter Ticket Number to reopen: "))
+            system.reopen_ticket(ticket_number)
+        elif choice == "4":
+            ticket_number = int(input("Enter Ticket Number to display: "))
+            system.display_ticket_info(ticket_number)
+        elif choice == "5":
+            system.display_statistics()
+        elif choice == "6":
+            print("Exiting the Ticketing System. Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please select a valid option.")
+
