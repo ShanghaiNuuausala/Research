@@ -175,4 +175,15 @@ def reopen_ticket(self, ticket_number):
 def reopen(self):
     if self.status == "Closed":
         self.status = "Reopened"
+
+# generating a new password
+def generate_password(self):
+        if "Password Change" in self.description:
+            password = f"{self.staff_id[:2]}{self.creator_name[:3]}"
+            self.response = f"Password changed to: {password}"
 #
+def generate_password(self):
+        if "Password Change" in self.description:
+            self.response = f"Password changed to: {self.staff_id[:2]}{self.creator_name[:3]}"
+            self.status = "Closed"
+
