@@ -1,7 +1,9 @@
 # This program prints How are you?
 # You can use two statements to print to sentences
-
 print("How are you?")
 print("are you ok ?")
+
+# Testing weather 2 is greater than 1
+print(2>1)
 
 
