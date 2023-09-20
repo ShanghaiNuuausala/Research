@@ -7,7 +7,7 @@ class Ticket:
         self.description = description
         self.response = "Not Yet Provided"
         self.status = "Open"
-
+#
 class Ticket:
     ticket_counter = 0 
 
@@ -20,7 +20,7 @@ class Ticket:
         self.status = "Open"
         self.response = "Not Yet Provided"
         Ticket.ticket_counter += 1
-
+#
 class Ticket:
     ticket_counter = 0 
     all_tickets = []
@@ -85,7 +85,6 @@ def submit_ticket(self, staff_id, creator_name, contact_email, description):
         self.tickets.append(ticket)
         self.open_tickets += 1
 #
-# Function to submit a new ticket
 def submit_ticket():
     staff_id = input("Enter Staff ID: ")
     creator_name = input("Enter Ticket Creator Name: ")
@@ -139,4 +138,41 @@ def displayTicket(self, ticketNumber):
         for ticket in HelpDesk.tickets:
             if ticket.ticketNumber == ticketNumber:
                 print(ticket)
+
+# reopening a ticket
+def reopen_ticket():
+    ticket_number = int(input("Enter Ticket Number to reopen: "))
+
+    for ticket in Ticket.all_tickets:
+        if ticket.ticket_number == ticket_number:
+            ticket.reopen()
+            print("Ticket reopened successfully!")
+            return
+
+    print("Ticket not found or cannot be reopened.")
+#
+def reopen(self):
+        self.status = "Reopened"
+#
+def reopen(self):
+        if self.status == "Closed":
+            self.status = "Reopened"
+#
+def reopen_ticket(self, ticket_number):
+    for ticket in self.tickets:
+        if ticket.ticket_number == ticket_number:
+            if ticket.status == "Closed":
+                ticket.reopen()
+                self.open_tickets += 1
+                self.closed_tickets -= 1
+                self.resolved_tickets -= 1
+                return True
+            else:
+                print("Ticket is not closed and cannot be reopened.")
+                return False
+    return False
+#
+def reopen(self):
+    if self.status == "Closed":
+        self.status = "Reopened"
 #
