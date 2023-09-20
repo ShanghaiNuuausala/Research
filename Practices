@@ -1,51 +1,49 @@
 # This program prints How are you?
-# You can use two statements to print to sentences
-print("How are you?")
-print("are you ok ?")
-
+# You can use two statements to print two sentences
+print("How are you?") # prints How are you?
+print("are you ok ?") # prints are you ok ?
+---------------------------------------------------
 # Testing weather 2 is greater than 1
-print(2>1)
-
+print(2>1) # prints True
+-------------------------------------
+# COMMENTS
+# Using multi-line comments using three double-quotes """ """
 """
-I'm trying to use multi-line comments using three double-quotes.
-
 I use these lines for your reference only.
-
 These are common in class, functions, or modules.
 """
 
-# Now I'm showing multiple single-line comments
+# Now using multiple single-line comments
 # Multiplying 2 with 3 # And printing the result
-print(2*3)
-
+print(2*3) # prints 6
+--------------------------------------------------------------------------------------
 # STRINGS
-# string variable
-print("Hello World!")
-my_text = "Hello World!"
-print(my_text)
+# String variable
+print("Hello World!") # prints Hello World!
+my_text = "Hello World!" 
+print(my_text) # prints Hello World!
 
-# You can use single or double quotations
-print("This is Sam's book.")
+# You can use single '' or double "" quotations
+print("This is Sam's book.") # prints This is Sam's book.
 # print('This is Sam's book.')
-print('This is Sam\'s book.')
-
+print('This is Sam\'s book.') # prints This is Sam's book.
+-----------------------------------------------------------
 # NUMBERS (no quotations)
-# without variable
+# Without variable
 print(1) # Prints 1
 print(5.7) # Prints 5.7
 print(-6.789) # Prints -6.789
 
-# using variables
+# Using variables
 my_int=125
 print(my_int) # Prints 125
-
 my_float=25.763
 print(my_float) # Prints 25.763
 
 # Difference between numbers and the strings
 print("1"+"2") # Prints 12
 print(1+2) # Prints 3
-
+----------------------------------------------
 # VARIABLES
 print("*** This program shows the use of a variable. ***") # Prints *** This program shows the use of a variable. ***
 
@@ -78,12 +76,12 @@ print(type(number1)) # prints <class 'float'>
 for_variable=25
 print(for_variable) # prints 25
 
-# variable name cannot clash with python in-build functions
+# Variable names cannot clash with python in-build functions
 print( abs(23.7)) # prints 23.7
 print( abs(-5.7))  # prints 5.7
 print( abs(3-7.5))  # prints 4.5
 
-# variable name can be alphanumerical if the first letter starts with a letter
+# Variable name can be alphanumerical if the first letter starts with a letter
 student_1="John"
 print(student_1) # prints John
 student_2="Sam" 
@@ -93,21 +91,18 @@ print(student_2) # prints Sam
 # student@name="Jack"
 # print (student@name) OUTPUT:SyntaxError
 
-# assigning multiple variables in a single line
+# Assigning multiple variables in a single line
 x,y,z=10,25,-303.5
 print(x) # prints 10
 print(y) # prints 25
-print(y) # prints 303.5
-print(z)
-
+print(z) # prints 303.5
+------------------------------------------------------------------------------------------------------------------
 # SUM
-print("The sum of 12 and 5.7 are as follows:") 
-print(12+5.7) 
-# prints The sum of 12 and 5.7 are as follows:
-17.7
-
+print("The sum of 12 and 5.7 are as follows:") # prints The sum of 12 and 5.7 are as follows:
+print(12+5.7) # prints 17.7
+----------------------------------------------------------------------------------------------
 # BOOLEAN
-# using the bool() function
+# Using the bool() function
 import random
 male = False
 male = bool((0, 1))
@@ -115,51 +110,40 @@ if (male):
 print ("We will use name Adam")
 else:
 print ("We will use name Sara") # prints We will use name Adam
-
-
+---------------------------------------------------------------
 # CASTING IN PYTHON
-# variable set to integer
+# Variable set to integer
 my_score = 201
-print("The type of my score is", type(my_score),"\n")
-print("my score is", my_score, "\n")
-print("Casting to a string...\n")
-# variable cast to string
+print("The type of my score is", type(my_score),"\n") # prints The type of my score is <class 'int'> 
+print("my score is", my_score, "\n") # prints my score is 201 
+print("Casting to a string...\n") # prints Casting to a string...
+
+# Variable cast to string
 my_score = str(my_score)
-print("The type of my score is now", type(my_score),"\n")
-print("my score is", my_score,"\n")
-# prints The type of my score is <class 'int'> 
-my score is 201 
-Casting to a string...
-The type of my score is now <class 'str'> 
-my score is 201 
-
+print("The type of my score is now", type(my_score),"\n") # prints The type of my score is now <class 'str'> 
+print("my score is", my_score,"\n") # prints my score is 201 
+------------------------------------------------------------------------------------------------------------
 # STRING INPUT
-# getting string input from user
-print("Welcome to your first data entry program\n")
-user_name = input("Please enter your name...\n")
-user_yob = int(input("Please enter your year of birth...\n"))
-print("Thank you for your input\n")
-print("The name you entered is ", user_name)
-print("Your age in years is ", 2016 - user_yob)
-# prints Please enter your name...
-Shanghai
-Please enter your year of birth...
-1989
-Thank you for your input
-The name you entered is Shanghai
-Your age in years is 27
-
-# OBJECT ORIENTED PROGRAMMING
-# classes and objects
-# creating a class called `Person` with attributes `name` and `age`. Create an instance of this class and print out the person's details.
+# Getting string input from user
+print("Welcome to your first data entry program\n") # prints Welcome to your first data entry program
+user_name = input("Please enter your name...\n") # prints Please enter your name... # input Shanghai
+user_yob = int(input("Please enter your year of birth...\n")) # prints Please enter your year of birth... # input 1989
+print("Thank you for your input\n") # prints Thank you for your input 
+print("The name you entered is ", user_name) # prints The name you entered is Shanghai
+print("Your age in years is ", 2016 - user_yob) # prints Your age in years is 27
+-----------------------------------------------------------------------------------------------------------------------
+# OBJECT ORIENTED PROGRAMMING (OOP)
+# Classes and Objects
+# Creating a class called `Person` with attributes `name` and `age`. Create an instance of this class and print out the person's details.
 class Person:
     def __init__(self, name, age):
         self.name = name
         self.age = age
 person1=Person("Alice", 30)
 print(f"{person1.name} is {person1.age} years old") # prints Alice is 30 years old
-# encapsulation
-# create a class `BankAccount` with private attributes `balance` and `account_number`, and methods `deposit` and `withdraw` to manipulate the balance.class BankAccount:
+
+# Encapsulation
+# Create a class `BankAccount` with private attributes `balance` and `account_number`, and methods `deposit` and `withdraw` to manipulate the balance.class BankAccount:
 class BankAccount:
     def __init__(self, account_number):
         self.__account_number = account_number
@@ -177,8 +161,9 @@ account = BankAccount("12345")
 account.deposit(1000)
 account.withdraw(500)
 print("Balance:", account.get_balance()) # prints Balance: 500
-# inheritance
-# create a base class `Vehicle` with a method `get_info()` and a derived class `Car` that inherits from `Vehicle` and adds a method `start_engine()`.
+
+# Inheritance
+# Create a base class `Vehicle` with a method `get_info()` and a derived class `Car` that inherits from `Vehicle` and adds a method `start_engine()`.
 class Vehicle:
     def __init__(self, make, model):
         self.make = make
@@ -189,11 +174,10 @@ class Car(Vehicle):
     def start_engine(self):
         return "Engine started"
 car = Car("Toyota", "Corolla")
-print(car.get_info())
-print(car.start_engine()) # prints Toyota Corolla
-Engine started
+print(car.get_info()) # prints Toyota Corolla
+print(car.start_engine()) # prints Engine started
 
-# polymorphism
+# Polymorphism
 # Create a base class `Shape` with a method `area()` and two derived classes `Circle` and `Rectangle`. Implement the `area()` method in each subclass.
 import math
 class Shape:
@@ -212,10 +196,10 @@ def area(self):
     return self.width * self.height
 circle = Circle(5)
 rectangle = Rectangle(4, 6)
-print("Circle area:", circle.area())
-print("Rectangle area:", rectangle.area()) # prints Circle area: 78.53981633974483
-Rectangle area: None
-# oop in python and modularity - reinforcing object oriented programming concepts
+print("Circle area:", circle.area()) # prints Circle area: 78.53981633974483
+print("Rectangle area:", rectangle.area()) # prints Rectangle area: None
+
+# OOP IN PYTHON AND MODULARITY - Reinforcing object oriented programming concepts
 # book.py
 class Book:
     def __init__(self, title, author, is_borrowed=False):
@@ -263,17 +247,17 @@ class Library:
 # main.py
 from book import Book
 from library import Library
-# create some book objects
+# Create some book objects
 book1 = Book("Python Programming", "John Smith")
 book2 = Book("Data Science Essentials", "Alice Johnson")
 book3 = Book("Web Development Basics", "Bob Wilson")
-# create a library
+# Create a library
 library = Library()
 # add books to the library
 library.add_book(book1)
 library.add_book(book2)
 library.add_book(book3)
-# borrow and return books
+# Borrow and return books
 print(library.borrow_book("Python Programming")) # borrow book1
 print(library.borrow_book("Python Programming")) # already borrowed
 print(library.return_book("Python Programming")) # return book1
