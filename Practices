@@ -148,3 +148,141 @@ Please enter your year of birth...
 Thank you for your input
 The name you entered is Shanghai
 Your age in years is 27
+
+# OBJECT ORIENTED PROGRAMMING
+# classes and objects
+# creating a class called `Person` with attributes `name` and `age`. Create an instance of this class and print out the person's details.
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+person1=Person("Alice", 30)
+print(f"{person1.name} is {person1.age} years old") # prints Alice is 30 years old
+# encapsulation
+# create a class `BankAccount` with private attributes `balance` and `account_number`, and methods `deposit` and `withdraw` to manipulate the balance.class BankAccount:
+class BankAccount:
+    def __init__(self, account_number):
+        self.__account_number = account_number
+        self.__balance = 0
+    def deposit(self, amount):
+        self.__balance += amount
+    def withdraw(self, amount):
+        if self.__balance >= amount:
+            self.__balance -= amount
+        else:
+            print("Insufficient funds")
+    def get_balance(self):
+        return self.__balance
+account = BankAccount("12345")
+account.deposit(1000)
+account.withdraw(500)
+print("Balance:", account.get_balance()) # prints Balance: 500
+# inheritance
+# create a base class `Vehicle` with a method `get_info()` and a derived class `Car` that inherits from `Vehicle` and adds a method `start_engine()`.
+class Vehicle:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+    def get_info(self):
+        return f"{self.make} {self.model}"
+class Car(Vehicle):
+    def start_engine(self):
+        return "Engine started"
+car = Car("Toyota", "Corolla")
+print(car.get_info())
+print(car.start_engine()) # prints Toyota Corolla
+Engine started
+
+# polymorphism
+# Create a base class `Shape` with a method `area()` and two derived classes `Circle` and `Rectangle`. Implement the `area()` method in each subclass.
+import math
+class Shape:
+    def area(self):
+        pass
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    def area(self):
+        return math.pi * self.radius ** 2
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+def area(self):
+    return self.width * self.height
+circle = Circle(5)
+rectangle = Rectangle(4, 6)
+print("Circle area:", circle.area())
+print("Rectangle area:", rectangle.area()) # prints Circle area: 78.53981633974483
+Rectangle area: None
+# oop in python and modularity - reinforcing object oriented programming concepts
+# book.py
+class Book:
+    def __init__(self, title, author, is_borrowed=False):
+        self.title = title
+        self.author = author
+        self.is_borrowed = is_borrowed
+    def borrow(self):
+        if not self.is_borrowed:
+            self.is_borrowed = True
+            return True
+        else:
+            return False
+    def return_book(self):
+        if self.is_borrowed:
+            self.is_borrowed = False
+            return True
+        else:
+            return False
+# library.py
+from book import Book
+class Library:
+    def __init__(self):
+        self.books = []
+        self.borrowed_count = 0
+    def add_book(self,book):
+        self.books.append(book)
+    def borrow_book(self,title):
+        for book in self.books:
+            if book.title == title:
+                if book.borrow():
+                    self.borrowed_count += 1
+                    return f"Successfully borrowed: {title}"
+                else:
+                    return f"{title} is already borrowed."
+            return f"{title} not found in library."
+    def return_book(self, title):
+        for book in self.books:
+            if book.title == title:
+                if book.return_book():
+                    self.borrowed_count -= 1
+                    return f"Sucessfully returned: {title}"
+                else:
+                    return f"{title} is not currently borrowed."
+            return f"{title} not found in the library."
+# main.py
+from book import Book
+from library import Library
+# create some book objects
+book1 = Book("Python Programming", "John Smith")
+book2 = Book("Data Science Essentials", "Alice Johnson")
+book3 = Book("Web Development Basics", "Bob Wilson")
+# create a library
+library = Library()
+# add books to the library
+library.add_book(book1)
+library.add_book(book2)
+library.add_book(book3)
+# borrow and return books
+print(library.borrow_book("Python Programming")) # borrow book1
+print(library.borrow_book("Python Programming")) # already borrowed
+print(library.return_book("Python Programming")) # return book1
+print(library.return_book("Python Programming")) # not currently borrowed
+# count how many books are currently borrowed
+print(f"Number of borrowed books: {library.borrowed_count}")
+# prints 
+Successfully borrowed: Python Programming
+Python Programming is already borrowed.
+Sucessfully returned: Python Programming
+Python Programming is not currently borrowed.
+Number of borrowed books: 0
