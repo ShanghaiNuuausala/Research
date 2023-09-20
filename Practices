@@ -119,3 +119,18 @@ else:
     print ("We will use name Sara") # prints We will use name Adam
 
 
+# CASTING IN PYTHON
+# variable set to integer
+my_score = 201
+print("The type of my score is", type(my_score),"\n")
+print("my score is", my_score, "\n")
+print("Casting to a string...\n")
+# variable cast to string
+my_score = str(my_score)
+print("The type of my score is now", type(my_score),"\n")
+print("my score is", my_score,"\n")
+# prints The type of my score is <class 'int'> 
+my score is 201 
+Casting to a string...
+The type of my score is now <class 'str'> 
+my score is 201 
