@@ -35,3 +35,46 @@ class Ticket:
         self.response = "Not Yet Provided"
         Ticket.ticket_counter += 1
         Ticket.all_tickets.append(self)
+
+# responding to a ticket
+def respond_to_ticket():
+    ticket_number = int(input("Enter Ticket Number: "))
+    response = input("Enter Feedback Response: ")
+
+    for ticket in Ticket.all_tickets:
+        if ticket.ticket_number == ticket_number:
+            ticket.respond(response)
+            print("Ticket responded successfully!")
+            return
+    print("Ticket not found.")
+#
+def respond(self, response):
+        self.response = response
+        if "Password Change" in self.description:
+            self.generate_password
+#
+def respond(self, response):
+        self.response = response
+def resolve_password_change(self):
+        if "Password Change" in self.description:
+            self.response = f"Password changed to: {self.staff_id[:2]}{self.creator_name[:3]}"
+            self.status = "Closed"
+#
+def respond(self, response):
+        self.response = response
+        if "Password Change" in self.description:
+            self.generate_password()
+def generate_password(self):
+        if "Password Change" in self.description:
+            self.response = f"Password changed to: {self.staff_id[:2]}{self.creator_name[:3]}"
+            self.status = "Closed"
+# 
+def respond_to_ticket(self, ticket_number, response):
+        for ticket in self.tickets:
+            if ticket.ticket_number == ticket_number:
+                ticket.respond(response)
+                self.closed_tickets += 1
+                self.open_tickets -= 1
+                self.resolved_tickets += 1
+                return True
+        return False
