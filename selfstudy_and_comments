@@ -1,1 +1,43 @@
+#1 – MyClass.py
+class MyClass:
+    def __init__(self, value):
+        self.value = value
+
+# When you print obj, the __str__ method is called
+    def __str__(self):
+        return f"MyClass object with value: {self.value}"
+
+# Create an instance of MyClass
+obj = MyClass(30)
+
+print(obj)  # Output: MyClass object with value: 30
+
+-------------------------------------------------------------------------------------------------------------------------------
+#2 – Student.py
+class Student:
+    def __init__(self, name, age,gender):
+        self.name = name
+        self.age = age
+        self.gender = gender
+
+# Creating an instance of the Student class
+student1 = Student("Maria", 30,"Female")
+student2 = Student("Sam", 18,"Male")
+student3 = Student("John", 29, "Male")
+
+# Accessing the attributes
+print(student1.name) # Output: "Maria"
+print(student1.age) # Output: 30
+print(student1.gender) # Output: Female
+print(student2.name) # Output: Sam
+
+# def __init__ is a method used to initialize the attributes of a class when an object is created from that class. 
+# It's a fundamental part of object-oriented programming in Python.
+
+# self: Is a reference to the instance of the class and is used to access attributes and methods within the class.
+# It's the first parameter in every instance method of a class.
+
+# parameter1, parameter2, ...: These are the parameters that you can pass when creating an instance of the class. 
+# They allow you to provide initial values for the object's attributes.
+-------------------------------------------------------------------------------------------------------------------------------
 
