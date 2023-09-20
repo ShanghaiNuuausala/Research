@@ -255,3 +255,31 @@ if choice == "1":
         else:
             print("Invalid choice. Please select a valid option.")
 
+# displaying ticket statistics
+def display_statistics(self):
+        total_tickets = len(self.tickets)
+        resolved_tickets = sum(1 for ticket in self.tickets if ticket.status == "Closed")
+        open_tickets = total_tickets - resolved_tickets
+        closed_tickets = resolved_tickets
+#
+def display_statistics(self):
+        print("Statistics:")
+        print("Number of Tickets Submitted:", len(self.tickets))
+        print("Number of Resolved Tickets:", self.resolved_tickets)
+        print("Number of Open Tickets:", self.open_tickets)
+        print("Number of Closed Tickets:", self.closed_tickets)
+#
+def displayTicket(self, ticketNumber):
+        for ticket in HelpDesk.tickets:
+            if ticket.ticketNumber == ticketNumber:
+                print(ticket)
+#
+  stats = Ticket.ticket_stats()
+    print("Ticket Statistics (Before Resolving):")
+    for key, value in stats.items():
+        print(f"{key}: {value}")
+
+
+
+
+
