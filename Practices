@@ -99,3 +99,10 @@ print(x) # prints 10
 print(y) # prints 25
 print(y) # prints 303.5
 print(z)
+
+# SUM
+print("The sum of 12 and 5.7 are as follows:") 
+print(12+5.7) 
+# prints The sum of 12 and 5.7 are as follows:
+17.7
+
