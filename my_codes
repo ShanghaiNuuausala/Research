@@ -187,3 +187,12 @@ def generate_password(self):
             self.response = f"Password changed to: {self.staff_id[:2]}{self.creator_name[:3]}"
             self.status = "Closed"
 
+# creating instances of submitting a ticket
+ticket1 = Ticket("12345", "John Doe", "john@example.com", "Issue with Email")
+ticket2 = Ticket("54321", "Alice Smith", "alice@example.com", "Password Change request")
+#
+ticket1 = helpDesk.submitTicket("123456", "John Smith", "johnsmith@hotmail.com", "Password Change")
+ticket2 = helpDesk.submitTicket("654321", "Jane Doe", "janedoe@gmail.com", "Network Connection Issue")
+ticket3 = helpDesk.submitTicket("789012", "Bob Johnson", "bjohnson@yahoo.com", "Application Error")
+print()
+
