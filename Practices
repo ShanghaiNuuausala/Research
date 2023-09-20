@@ -17,3 +17,31 @@ These are common in class, functions, or modules.
 # Now I'm showing multiple single-line comments
 # Multiplying 2 with 3 # And printing the result
 print(2*3)
+
+# STRINGS
+# string variable
+print("Hello World!")
+my_text = "Hello World!"
+print(my_text)
+
+# You can use single or double quotations
+print("This is Sam's book.")
+# print('This is Sam's book.')
+print('This is Sam\'s book.')
+
+# NUMBERS (no quotations)
+# without variable
+print(1) # Prints 1
+print(5.7) # Prints 5.7
+print(-6.789) # Prints -6.789
+
+# using variables
+my_int=125
+print(my_int) # Prints 125
+
+my_float=25.763
+print(my_float) # Prints 25.763
+
+# Difference between numbers and the strings
+print("1"+"2") # Prints 12
+print(1+2) # Prints 3
