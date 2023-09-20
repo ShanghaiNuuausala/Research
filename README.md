@@ -2,7 +2,7 @@
 
 ## A prototype project of code solutions for a Help Desk Ticketing System in Python
 
-This project is a prototype built using an intergrated development enviroment of Visual Studio Code, the latest version of Python3 programming language along with my findings to apply code solutions in developing a Help Desk Ticketing System. The prototype is designed to manage the following ticketing processes of the help desk ticketing system:
+This project is a prototype built using an intergrated development enviroment of Visual Studio Code Version: 1.73.1, and the latest version of Python 3:11.0 64-bit programming language along with my findings to apply code solutions in developing a Help Desk Ticketing System. The prototype is designed to manage the following ticketing processes of the help desk ticketing system:
 
 * Submitting a ticket: Tickets can be submitted by providing staff members Staff ID, Name of the ticket creator, Contact email and the Description of the issue.
 * Assigning a ticket number: Ticket numbers should be assigned automatically after the count of 2000.
