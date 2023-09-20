@@ -279,7 +279,10 @@ def displayTicket(self, ticketNumber):
     for key, value in stats.items():
         print(f"{key}: {value}")
 
-
-
+# main
+if __name__ == "__main__":
+    system = Helpdesk()
+#
+if __name__ == "__main__":
 
 
