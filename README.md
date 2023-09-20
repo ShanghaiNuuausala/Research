@@ -12,7 +12,11 @@ This project is a prototype built using an intergrated development enviroment of
 * Displaying a ticket: A way to display ticket information of the ticket number, Name of ticket creator, Staff ID, Contact email, Description of the issue, Response from help desk and the status of the ticket.
 
 ## Installation
-
+1. Clone project
+2. Download and install Visual Studio Code - https://code.visualstudio.com/download
+3. Download Python - https://www.python.org/downloads/ - see video here: https://www.guru99.com/how-to-install-python.html
+4. Verify Python installation by running one of the following commands in terminal - Linux/mac0S: python3 --version or Windows: py-3 --version
+5. In Visual Studio Code select a Python3 interpreter by opening the command pallet and type Python: Select interpreter and select.
 
 
 
