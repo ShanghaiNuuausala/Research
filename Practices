@@ -45,3 +45,57 @@ print(my_float) # Prints 25.763
 # Difference between numbers and the strings
 print("1"+"2") # Prints 12
 print(1+2) # Prints 3
+
+# VARIABLES
+print("*** This program shows the use of a variable. ***") # Prints *** This program shows the use of a variable. ***
+
+# my_text is holding the value "Hello World!"
+my_text="Hello World!" # prints Hello World!
+print(my_text)
+
+# my_text is holding a new value
+my_text="Dear Reader, how are you?"
+print(my_text) # prints Dear Reader, how are you?
+
+# Analysis
+number1=2
+number2=3
+print(number1+number2) # prints 5
+number1=2.0
+print(number1+number2) # prints 5.0
+
+# Data type
+number1=2
+print(type(number1)) # prints <class 'int'>
+number1=2.0
+print(type(number1)) # prints <class 'float'>
+
+# Naming conventions
+# variable name cannot clash with python keywords
+# for=25
+# print(for) OUTPUT:SyntaxError
+# the correct way to write variable name
+for_variable=25
+print(for_variable) # prints 25
+
+# variable name cannot clash with python in-build functions
+print( abs(23.7)) # prints 23.7
+print( abs(-5.7))  # prints 5.7
+print( abs(3-7.5))  # prints 4.5
+
+# variable name can be alphanumerical if the first letter starts with a letter
+student_1="John"
+print(student_1) # prints John
+student_2="Sam" 
+print(student_2) # prints Sam
+# 3student="Kate"
+# print(student_3) OUTPUT:SyntaxError
+# student@name="Jack"
+# print (student@name) OUTPUT:SyntaxError
+
+# assigning multiple variables in a single line
+x,y,z=10,25,-303.5
+print(x) # prints 10
+print(y) # prints 25
+print(y) # prints 303.5
+print(z)
