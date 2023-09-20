@@ -78,3 +78,34 @@ def respond_to_ticket(self, ticket_number, response):
                 self.resolved_tickets += 1
                 return True
         return False
+
+# submitting a ticket
+def submit_ticket(self, staff_id, creator_name, contact_email, description):
+        ticket = Ticket(staff_id, creator_name, contact_email, description)
+        self.tickets.append(ticket)
+        self.open_tickets += 1
+#
+# Function to submit a new ticket
+def submit_ticket():
+    staff_id = input("Enter Staff ID: ")
+    creator_name = input("Enter Ticket Creator Name: ")
+    contact_email = input("Enter Email Address: ")
+    description = input("Enter Description of the Issue: ")
+#
+def submitTicket(self, staffID, name, email, description):
+        newTicket = Ticket(HelpDesk.ticketNumber, staffID, name, email, description)
+        self.tickets.append(newTicket)
+        HelpDesk.ticketNumber += 1
+          # HelpDesk.ticketNumber  = HelpDesk.ticketNumber + 1
+        HelpDesk.openTickets += 1
+        if "Password Change" in description:
+            newTicket.response = f"New Password: {staffID[:2]}{name[:3]}"
+            HelpDesk.closedTickets += 1
+            HelpDesk.openTickets -= 1
+            newTicket.status = "Closed"
+        return newTicket
+#  
+def submit_ticket(self, staff_id, creator_name, contact_email, description):
+        ticket = Ticket(staff_id, creator_name, contact_email, description)
+        self.tickets.append(ticket)
+        print("Ticket submitted successfully!")
